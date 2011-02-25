@@ -1,0 +1,9 @@
+If you have a dynamic website, written in PHP and your site is slow then this solution might help you.
+Some times you have to have some nasty query then process the result afterwards which makes the whole thing even nastier and slow.
+With PHPCache, you will be able to cache the result of that piece of code for as long as you want.
+Suppose that your nasty script gets 100 hits per second, and you cache your script using PHPCache for just 1 minute at a time, the result is, in that one minute your server will run that piece of code only once.
+PHPCache will only query the database for the result that was stored in the database 100 times in that one minute.
+This will be a very quick process, since it’s only a primary key lookup (piece a cake) for MySQL and SQLite. These databases can handle 1000s of simple queries like these per second! But your server might only be able to process your code 5 times per second…
+In fact I tested this and SQLite could retrieve the cache 2,300 per second, MySQL around 2,500 times!
+PHPCache supports MySQL, MySQLi and SQLite extensions at this time but you are welcome to write and submit extensions for other database servers.
+The other great thing about PHPCache is support for SQLite; SQLite is a very nice, quick little database that you can setup easily and you won’t need to have MySQL.
