@@ -89,7 +89,7 @@
 				CREATE INDEX 
 					PHPCache_PHPCache_expires
 				ON 
-					PHPCache (PHPCache_expires)
+					$table_name (PHPCache_expires)
 			");
 		}
 		
